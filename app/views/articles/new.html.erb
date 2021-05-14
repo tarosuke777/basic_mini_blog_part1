@@ -2,5 +2,8 @@
 <%= form_with model: @article do |form| %>
   <%= form.label :content %>
   <%= form.text_area :content, size: "50x3", maxlength: "140" %>
+  <% @article.errors.full_messages_for(:content).each do | message | %>
+    <%= message%>
+  <% end %>
   <%= form.submit %>
 <% end %>

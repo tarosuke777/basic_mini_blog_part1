@@ -3,5 +3,6 @@
 <%  @articles.each do |article| %>
   <li>
     <%= article.content %>
+    <%= l article.created_at, format: :short %>
   </li>
 <% end %>
