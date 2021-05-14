@@ -5,4 +5,13 @@ class ArticlesController < ApplicationController
   def new 
     @article = Article.new
   end 
+  def create
+    @article = Article.new(content: params[:article][:content])
+
+    if @article.save
+      redirect_to action: "index"
+    else
+      render :new
+    end
+  end
 end

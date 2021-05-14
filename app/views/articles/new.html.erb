@@ -1,1 +1,6 @@
-<h1>記事</h1>
+<h1>New Article </h1>
+<%= form_with model: @article do |form| %>
+  <%= form.label :content %>
+  <%= form.text_area :content, size: "50x3", maxlength: "140" %>
+  <%= form.submit %>
+<% end %>
