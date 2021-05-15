@@ -1,0 +1,6 @@
+%h1 全体タイムライン
+%a{:href => "/articles/new"} 追加
+- @articles.each do |article|
+  %li
+    = article.content
+    = l article.created_at, format: :short

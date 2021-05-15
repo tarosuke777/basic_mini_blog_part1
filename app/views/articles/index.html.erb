@@ -1,8 +1,0 @@
-<h1>全体タイムライン</h1>
-<a href="/articles/new" >追加</a>
-<%  @articles.each do |article| %>
-  <li>
-    <%= article.content %>
-    <%= l article.created_at, format: :short %>
-  </li>
-<% end %>
