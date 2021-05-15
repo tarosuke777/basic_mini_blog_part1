@@ -1,0 +1,11 @@
+5/15 
+14:30-15:30
+1.convert haml format
+2.add webpacker and Bootstrap and Font-Awesome
+
+Next
+understand webpacker, Bootstrap, font-Awesome
+and
+make design
+
+20:00-

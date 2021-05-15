@@ -1,6 +1,18 @@
-%h1 全体タイムライン
-%a{:href => "/articles/new"} 追加
-- @articles.each do |article|
-  %li
-    = article.content
-    = l article.created_at, format: :short
+%div{:class => "container"}
+  %h1{:class => "display-4"}Time Line
+  %input{:type => "button", 
+              :class => "btn btn-primary btn-sm", 
+              :onclick => "location.href='/articles/new'", 
+              :value => "Add" }
+  %table{:class => "table table-striped"}
+    %thead
+      %tr
+        %th{:scope => "col"}Time
+        %th{:scope => "col"}Content
+    %tbody
+      - @articles.each do |article|
+        %tr       
+          %td
+            = l article.created_at, format: :short
+          %td
+            = article.content
