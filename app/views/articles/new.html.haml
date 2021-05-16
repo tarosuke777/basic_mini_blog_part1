@@ -6,4 +6,8 @@
       = form.text_area :content, maxlength: "140", class: "form-control"
       - @article.errors.full_messages_for(:content).each do | message |
         = message
-    = form.submit "Regist", class: "btn btn-primary"
+    = form.submit "Regist", class: "btn btn-primary btn-sm"
+    %input{:type => "button", 
+                :class => "btn btn-secondary btn-sm", 
+                :onclick => "location.href='/articles'", 
+                :value => "Return" }
