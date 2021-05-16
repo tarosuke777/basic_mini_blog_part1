@@ -6,6 +6,9 @@
 ## Haml
 https://haml.info/docs/yardoc/file.REFERENCE.html
 
+## Ruby
+https://docs.ruby-lang.org/ja/3.0.0/doc/index.html
+
 ## Rails
 https://railsdoc.com/gem#bundle 
 
