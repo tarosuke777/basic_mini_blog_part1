@@ -4,15 +4,12 @@
               :class => "btn btn-primary btn-sm", 
               :onclick => "location.href='/articles/new'", 
               :value => "Add" }
-  %table{:class => "table table-striped"}
-    %thead
-      %tr
-        %th{:scope => "col"}Time
-        %th{:scope => "col"}Content
-    %tbody
-      - @articles.each do |article|
-        %tr       
-          %td
-            = l article.created_at, format: :short
-          %td
-            = article.content
+  - @articles.each do |article|
+    %div{:class => "row"}
+      %div{:class => "col "}
+        %span{:style => "color:Dodgerblue"}
+          %i{:class => "far fa-comment-dots"}
+        = l article.created_at, format: :short
+    %div{:class => "row"}
+      %div{:class => "col ml-5 border-left border-primary"}
+        = article.content
