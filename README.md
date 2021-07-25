@@ -17,3 +17,17 @@ https://railsguides.jp/webpacker.html
 
 ## BootStrap
 https://getbootstrap.jp/docs/4.3/getting-started/introduction/
+
+## Git
+### clean
+git checkout .
+git clean -df .
+
+## Rails Command
+### DB
+rails db:reset
+rails db:migrate
+
+## Bundle
+bundle install
+bundle list
