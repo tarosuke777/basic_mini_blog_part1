@@ -23,6 +23,11 @@ https://getbootstrap.jp/docs/4.3/getting-started/introduction/
 git checkout .
 git clean -df .
 
+### PUSH
+git add .
+git commit -m "msg"
+git push origin main
+
 ## Rails Command
 ### DB
 rails db:reset
