@@ -30,8 +30,7 @@ git push origin main
 
 ## Rails Command
 ### DB
-rails db:reset
-rails db:migrate
+rails db:migrate:reset
 
 ## Bundle
 bundle install
