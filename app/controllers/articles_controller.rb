@@ -6,17 +6,21 @@ class ArticlesController < ApplicationController
   end
 
   def new 
-    @article = Article.new
+    @article = current_user.created_articles.build
   end
 
   def create
-    @article = Article.new(content: params[:article][:content])
+    @article = current_user.created_articles.build(event_params)
 
     if @article.save
-      redirect_to action: "index"
-    else
-      render :new
+      redirect_to action: "index", notice: "created"
     end
   end
-  
+
+  private
+
+  def event_params
+    params.require(:article).permit(:content)
+end
+
 end

@@ -5,6 +5,8 @@ class User < ApplicationRecord
   #        :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :registerable, :validatable
 
+  has_many :created_articles, class_name: "Article", foreign_key: "owner_id", dependent: :nullify
+
   validates :username, format: { with: /\A[a-zA-Z]+\z/, message: "英文字のみが使えます" }, length: {maximum: 20}, presence: true 
   validates :profile, length: {maximum: 200}
 
