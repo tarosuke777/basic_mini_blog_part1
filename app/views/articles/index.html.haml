@@ -1,9 +1,5 @@
 %div{:class => "container"}
   %h1{:class => "display-4 text-monospace"}Time Line
-  %input{:type => "button", 
-              :class => "btn btn-primary btn-sm", 
-              :onclick => "location.href='/articles/new'", 
-              :value => "Regist" }
   - @articles.each do |article|
     %div{:class => "row"}
       %div{:class => "col text-monospace"}

@@ -16,6 +16,13 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :profile
+    = f.text_area :profile, class: "form-control", row: 10
+  .field
+    = f.label :blog_url
+    %br/
+    = f.text_field :blog_url
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"

@@ -28,6 +28,13 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
+  .field
+    = f.label :profile
+    = f.text_area :profile, class: "form-control", row: 10
+  .field
+    = f.label :blog_url
+    %br/
+    = f.text_field :blog_url
   .actions
     = f.submit "Update"
 %h3 Cancel my account

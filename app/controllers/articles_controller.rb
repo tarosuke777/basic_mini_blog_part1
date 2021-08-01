@@ -1,10 +1,14 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @articles = Article.all.order(created_at: :desc)
   end
+
   def new 
     @article = Article.new
-  end 
+  end
+
   def create
     @article = Article.new(content: params[:article][:content])
 
@@ -14,4 +18,5 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+  
 end
