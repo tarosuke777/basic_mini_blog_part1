@@ -20,6 +20,8 @@
             %li.nav-item
               = link_to "Edit User", edit_user_registration_path, class: "nav-link"
             %li.nav-item
+              = link_to "Retirement", registration_path(:user), data: { confirm: "Are you sure?" }, method: :delete, class: "nav-link"          
+            %li.nav-item
               = link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete
           - else
             %li.nav-item
