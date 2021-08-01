@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     @article = current_user.created_articles.build(event_params)
 
     if @article.save
-      redirect_to action: "index", notice: "created"
+      redirect_to root_path, notice: "article created"
     end
   end
 

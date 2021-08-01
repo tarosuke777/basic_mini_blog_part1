@@ -1,0 +1,11 @@
+%h1.mt-3.mb-3= @user.username
+.row
+  .col-8
+    .card.mb-2
+      %h5.card-header Profile
+      .card-body
+        %p.card-text= @user.profile
+    .card.mb-2
+      %h5.card-header Blog Url
+      .card-body
+        = link_to @user.blog_url, class: "card-link"

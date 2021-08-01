@@ -5,7 +5,7 @@
       %span{style: "color:Dodgerblue"}
         %i.far.fa-comment-dots
       = l article.created_at, format: :short
-      = article.owner.username
+      = link_to article.owner.username, user_path(id: article.owner.id)
   .row
     .col.ml-5.border-left.border-primary.text-break.text-monospace
       = article.content
