@@ -1,11 +1,11 @@
-%div{:class => "container"}
-  %h2{:class => "display-4 text-monospace"}Time Line
-  - @articles.each do |article|
-    %div{:class => "row"}
-      %div{:class => "col text-monospace"}
-        %span{:style => "color:Dodgerblue"}
-          %i{:class => "far fa-comment-dots"}
-        = l article.created_at, format: :short
-    %div{:class => "row"}
-      %div{:class => "col ml-5 border-left border-primary text-break text-monospace"}
-        = article.content
+%h2 Time Line
+- @articles.each do |article|
+  .row
+    .col.text-monospace
+      %span{style: "color:Dodgerblue"}
+        %i.far.fa-comment-dots
+      = l article.created_at, format: :short
+      = article.owner.username
+  .row
+    .col.ml-5.border-left.border-primary.text-break.text-monospace
+      = article.content
