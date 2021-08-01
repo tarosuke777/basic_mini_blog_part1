@@ -35,3 +35,14 @@ rails db:migrate:reset
 ## Bundle
 bundle install
 bundle list
+
+## haml
+rails haml:erb2haml
+
+## 
+7/25 16:00-16:30
+7/25 16:45-17:30
+
+7/31 20:30-21:15
+
+8/1 09:00-
