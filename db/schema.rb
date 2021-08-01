@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 2021_07_25_075659) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "username", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "profile"
     t.string "blog_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

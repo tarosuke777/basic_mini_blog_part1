@@ -5,7 +5,7 @@ class User < ApplicationRecord
   #        :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :registerable, :validatable
 
-  validates :name, format: { with: /\A[a-zA-Z]+\z/, message: "英文字のみが使えます" }, length: {maximum: 20}, presence: true 
+  validates :username, format: { with: /\A[a-zA-Z]+\z/, message: "英文字のみが使えます" }, length: {maximum: 20}, presence: true 
   validates :profile, length: {maximum: 200}
 
   def email_required? 
