@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
 
-    belongs_to :owner, class_name: "User"
+    belongs_to :user
 
     validates :content, presence: true, length: {maximum:140}
 end
