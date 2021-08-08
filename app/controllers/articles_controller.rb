@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.created_articles.build(event_params)
+    @article = current_user.created_articles.build(article_params)
 
     if @article.save
       redirect_to root_path, notice: "article created"
@@ -19,8 +19,8 @@ class ArticlesController < ApplicationController
 
   private
 
-  def event_params
+  def article_params
     params.require(:article).permit(:content)
-end
+  end
 
 end

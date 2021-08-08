@@ -21,11 +21,13 @@ ActiveRecord::Schema.define(version: 2021_08_02_080951) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_relationships_on_user_id"
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,5 +41,4 @@ ActiveRecord::Schema.define(version: 2021_08_02_080951) do
   end
 
   add_foreign_key "articles", "users"
-  add_foreign_key "relationships", "users"
 end
