@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :relationships, only: %i[create]
   end
 
-  root "articles#index"
+  root 'articles#index'
+  get '/articles/following', to: 'articles#following'
   resources :articles
 end

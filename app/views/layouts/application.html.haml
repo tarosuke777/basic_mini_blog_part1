@@ -16,6 +16,8 @@
         %ui.navbar-nav
           - if user_signed_in?
             %li.nav-item
+              = link_to "following Articles", articles_following_path, class: "nav-link"
+            %li.nav-item
               = link_to "Create Article", new_article_path, class: "nav-link"
             %li.nav-item
               = link_to "Edit User", edit_user_registration_path, class: "nav-link"

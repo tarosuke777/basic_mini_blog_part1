@@ -2,7 +2,13 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    # @articles = Article.all.order(created_at: :desc)
     @articles = Article.all.order(created_at: :desc)
+  end
+
+  def following
+    @articles = Article.includes(:user).where(user_id: current_user.following)
+    # @articles = Article.includes(user: :following).where(user_id: current_user.following)
   end
 
   def new 

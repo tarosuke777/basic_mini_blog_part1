@@ -1,0 +1,14 @@
+- @articles.each do |article|
+  .row
+    .col.text-monospace
+      %span{style: "color:Dodgerblue"}
+        %i.far.fa-comment-dots
+      = l article.created_at, format: :short
+      = article.user.following.each do |f| puts f.username end
+      = link_to article.user.username, user_path(id: article.user.id)
+      - if user_signed_in? && article.user != current_user
+        - unless current_user.following.include?(article.user)
+          = link_to "フォローする", user_relationships_path(article.user.id), method: :post
+  .row
+    .col.ml-5.border-left.border-primary.text-break.text-monospace
+      = article.content
