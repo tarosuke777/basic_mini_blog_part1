@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
   
   resources :users, only: %i[show] do
-    resources :relationships, only: %i[create]
+    resources :relationships, only: %i[create destroy]
   end
 
   root 'articles#index'

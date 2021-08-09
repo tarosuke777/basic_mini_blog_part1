@@ -9,3 +9,9 @@
       %h5.card-header Blog Url
       .card-body
         = link_to @user.blog_url, class: "card-link"
+  .col-4
+    - if user_signed_in? && current_user != @user
+      - unless current_user.following.include?(@user)
+        = link_to "フォローする", user_relationships_path(@user), method: :post
+      - else
+        = link_to "フォロー解除する", user_relationships_path(current_user, @user), method: :delete
