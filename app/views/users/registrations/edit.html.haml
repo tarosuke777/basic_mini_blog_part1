@@ -1,5 +1,3 @@
-%h5
-  = t(:edit_user)
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "users/shared/error_messages", resource: resource
   .form-group
@@ -28,3 +26,4 @@
   .form-group
     = f.submit t(:update), class: "btn btn-primary btn-sm"
     = link_to t(:back), root_path, class:"btn btn-secondary btn-sm"
+    = link_to t(:retirement), registration_path(:user), data: { confirm: t(:delete_user_message) }, method: :delete, class:"btn btn-danger btn-sm"         

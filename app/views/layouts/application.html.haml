@@ -10,7 +10,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header.navbar.navbar-expand-sm.navbar-light.bg-light
+    %header.navbar.navbar-expand-sm.navbar-light{ style: "background-color: #e3f2fd;" }
       .container
         = link_to t(:title), root_path, class: "navbar-brand"
         %ui.navbar-nav
@@ -20,11 +20,7 @@
             %li.nav-item
               = link_to t(:following_user_articles), articles_following_path, class: "nav-link"
             %li.nav-item
-              = link_to t(:create_article), new_article_path, class: "nav-link"
-            %li.nav-item
               = link_to t(:edit_user), edit_user_registration_path, class: "nav-link"
-            %li.nav-item
-              = link_to t(:retirement), registration_path(:user), data: { confirm: "Are you sure?" }, method: :delete, class: "nav-link"          
             %li.nav-item
               = link_to t(:logout), destroy_user_session_path, class: "nav-link", method: :delete
           - else
@@ -32,11 +28,11 @@
               = link_to t(:sign_up), new_registration_path(:user), class: "nav-link"
             %li.nav-item
               = link_to t(:login), new_user_session_path, class: "nav-link"
-    .container
+    .container.py-3
       - if flash.notice
         .alert.alert-success
           = flash.notice
       - if flash.alert
-        .alert.alert-success
+        .alert.alert-warning
           = flash.alert
       = yield

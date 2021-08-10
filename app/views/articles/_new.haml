@@ -1,0 +1,9 @@
+= form_with(model: current_user.created_articles.build, local: false, class: "form-horizontal") do |f|
+  #errors
+  .row
+    .col-4
+      .form-group
+        = f.text_area :content, maxlength: "140", class: "form-control"
+    .col-2.px-0.align-self-end
+      .form-group
+        = f.submit t(:post), class: "btn btn-primary btn-sm"

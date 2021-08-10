@@ -4,7 +4,10 @@
       %span{style: "color:Dodgerblue"}
         %i.far.fa-comment-dots
       = l article.created_at, format: :short
-      = link_to article.user.username, user_path(id: article.user.id)
+      - if user_signed_in? && current_user == article.user
+        = article.user.username
+      - else
+        = link_to article.user.username, user_path(id: article.user.id)
   .row
     .col.ml-5.border-left.border-primary.text-break.text-monospace
       = article.content

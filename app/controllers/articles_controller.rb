@@ -9,15 +9,11 @@ class ArticlesController < ApplicationController
     @articles = Article.includes(:user).where(user_id: current_user.following).order(created_at: :desc)
   end
 
-  def new 
-    @article = current_user.created_articles.build
-  end
-
   def create
     @article = current_user.created_articles.build(article_params)
 
     if @article.save
-      redirect_to root_path, notice: "article created"
+      redirect_to root_path
     end
   end
 
