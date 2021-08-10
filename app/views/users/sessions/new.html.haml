@@ -1,4 +1,5 @@
-%h2 Log in
+%h5 
+  = t(:login)
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-group
     = f.label :username
@@ -7,5 +8,5 @@
     = f.label :password
     = f.password_field :password,  class: "form-control"
   .form-group
-    = f.submit "Log in", class: "btn btn-primary btn-sm"
+    = f.submit t(:login), class: "btn btn-primary btn-sm"
 = render "users/shared/links"
