@@ -1,2 +1,4 @@
 .container
+  - if @articles.count == 0 
+    フォローしているユーザの投稿がありません
   = render :partial => "articles"
