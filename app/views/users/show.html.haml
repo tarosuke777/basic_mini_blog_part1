@@ -1,17 +1,17 @@
 .row
   .col-8
     .card.mb-2
-      .card-header
+      .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:username)
       .card-body
         %p.card-text= @user.username
     .card.mb-2
-      .card-header
+      .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:profile)
       .card-body
         %p.card-text= @user.profile
     .card.mb-2
-      .card-header
+      .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:blog_url)
       .card-body
         = link_to @user.blog_url, class: "card-link"

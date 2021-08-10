@@ -1,11 +1,10 @@
 ja:
-  title: ミニッター
+  title: ミニブログ
   sign_up: ユーザ登録
   login: ログイン
   logout: ログアウト
   retirement: ユーザ削除
   edit_user: ユーザ編集
-  create_article: 投稿
   following_user_articles: フォロー済タイムライン
   all_user_articles: タイムライン
   regist: 登録
@@ -22,7 +21,7 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         current_password: 現在のパスワード
-        profile: プロファイル
+        profile: 自己紹介
         blog_url: ブログURL       
   time:
     formats:

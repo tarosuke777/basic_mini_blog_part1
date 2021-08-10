@@ -10,4 +10,4 @@
         = link_to article.user.username, user_path(id: article.user.id)
   .row
     .col.ml-5.border-left.border-primary.text-break.text-monospace
-      = article.content
+      = simple_format(h(article.content))
