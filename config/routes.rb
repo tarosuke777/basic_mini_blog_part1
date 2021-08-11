@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  
+
   resources :users, only: %i[show] 
   resources :relationships, only: %i[create destroy]
 

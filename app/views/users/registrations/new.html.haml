@@ -5,10 +5,10 @@
     = f.text_field :username, class: "form-control"
   .form-group
     = f.label :password
-    - if @minimum_password_length
-      %em
-        = "(#{t("users.registrations.password_length_message", minimum_password_length: @minimum_password_length)})"
     = f.password_field :password, class: "form-control"
+    .form-text.small
+      - if @minimum_password_length
+        = "(#{t("users.registrations.password_length_message", minimum_password_length: @minimum_password_length)})"
   .form-group
     = f.label :password_confirmation
     = f.password_field :password_confirmation, class: "form-control"
