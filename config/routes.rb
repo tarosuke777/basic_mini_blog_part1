@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[show] 
   resources :relationships, only: %i[create destroy]
 
-  root 'articles#index'
-  get '/articles/following', to: 'articles#following'
-  resources :articles
+  root 'posts#index'
+  get '/posts/following', to: 'posts#following'
+  resources :posts
 end

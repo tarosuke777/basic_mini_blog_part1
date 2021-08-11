@@ -5,8 +5,8 @@ ja:
   logout: ログアウト
   retirement: ユーザ削除
   edit_user: ユーザ編集
-  following_user_articles: フォロー済タイムライン
-  all_user_articles: タイムライン
+  following_user_posts: フォロー済タイムライン
+  all_user_posts: タイムライン
   regist: 登録
   update: 更新
   back: 戻る
@@ -14,7 +14,7 @@ ja:
   delete_user_message: ユーザを削除しますか？
   activerecord:
     attributes:
-      article:
+      post:
         content: 内容
       user:
         username: ユーザ名

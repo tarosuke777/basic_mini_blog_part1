@@ -2,8 +2,8 @@
 
 one:
   users: one
-  articles: one
+  posts: one
 
 two:
   users: two
-  articles: two
+  posts: two

@@ -1,0 +1,8 @@
+.container
+  - if user_signed_in?
+    = render :partial => "new"
+.container
+  - if @posts.count == 0 
+    投稿がありません
+  - else
+    = render :partial => "posts"

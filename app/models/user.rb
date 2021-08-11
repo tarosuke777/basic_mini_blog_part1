@@ -5,7 +5,7 @@ class User < ApplicationRecord
   #        :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :registerable, :validatable
 
-  has_many :created_articles, class_name: "Article", foreign_key: "user_id", dependent: :destroy
+  has_many :created_posts, class_name: "Post", foreign_key: "user_id", dependent: :destroy
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
