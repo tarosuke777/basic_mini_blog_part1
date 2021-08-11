@@ -5,10 +5,10 @@
     = f.text_field :username, class: "form-control"
   .form-group
     = f.label :password
-    = "(#{t(:edit_password2_message)})"
+    = t(".message.password")
     - if @minimum_password_length
       %em
-        = "(#{t(:password_message, minimum_password_length: @minimum_password_length)})"
+        = "(#{t("users.registrations.password_length_message", minimum_password_length: @minimum_password_length)})"
     = f.password_field :password, class: "form-control"
   .form-group
     = f.label :password_confirmation
@@ -21,9 +21,9 @@
     = f.text_field :blog_url, class: "form-control"
   .form-group
     = f.label :current_password
-    = "(#{t(:edit_password_message)})"
+    = t(".message.current_password")
     = f.password_field :current_password, class: "form-control"
   .form-group
     = f.submit t(:update), class: "btn btn-primary btn-sm"
     = link_to t(:back), root_path, class:"btn btn-secondary btn-sm"
-    = link_to t(:retirement), registration_path(:user), data: { confirm: t(:delete_user_message) }, method: :delete, class:"btn btn-danger btn-sm"         
+    = link_to t(:delete), registration_path(:user), data: { confirm: t(".message.delete_confirm") }, method: :delete, class:"btn btn-danger btn-sm"         
