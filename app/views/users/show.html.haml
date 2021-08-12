@@ -9,12 +9,12 @@
       .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:profile)
       .card-body
-        %p.card-text= simple_format(h(@user.profile))
+        = simple_format(h(@user.profile), {}, wrapper_tag: "div")
     .card.mb-2
       .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:blog_url)
       .card-body
-        = link_to @user.blog_url, class: "card-link"
+        = link_to nil, @user.blog_url, target: "_blank"
   .col-4
     - if user_signed_in? && current_user != @user
       - unless current_user.following.include?(@user)

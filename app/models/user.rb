@@ -12,8 +12,9 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
 
-  validates :username, format: { with: /\A[a-zA-Z]+\z/, message: "は英文字のみが使えます。" }, length: {maximum: 20}, presence: true , uniqueness: true
-  validates :profile, length: {maximum: 200}
+  validates :username, presence: true , uniqueness: true, length: { maximum: 20 }, format: { with: /\A[a-zA-Z]+\z/, message: "英文字で入力してください。"}
+  validates :profile, length: { maximum: 200 }
+  validates :blog_url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: "URL形式で入力してください。"}
 
   def email_required? 
     false 
