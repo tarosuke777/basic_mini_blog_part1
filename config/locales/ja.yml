@@ -62,7 +62,7 @@ ja:
     messages:
       taken: は既に存在します
       already_confirmed: "は既に登録済みです。ログインしてください。"
-      blank: "が入力されていません。"
-      too_short: "は%{count}文字以上を入力して下さい。"
-      too_long: "は%{count}文字以下を入力して下さい。"
+      blank: "を入力してください。"
+      too_short: "は%{count}文字以上を入力してください。"
+      too_long: "は%{count}文字以下を入力してください。"
       confirmation: "があっていません。"
