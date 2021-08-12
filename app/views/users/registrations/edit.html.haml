@@ -1,4 +1,4 @@
-= form_for(resource, as: resource_name, url: update_user_registration_path, html: { method: :put }) do |f|
+= form_for(resource, as: resource_name, url: users_edit_path, html: { method: :put }) do |f|
   = render "users/shared/error_messages", resource: resource
   .form-group
     = f.label :username
@@ -25,4 +25,4 @@
   .form-group
     = f.submit t(:update), class: "btn btn-primary btn-sm"
     = link_to t(:back), root_path, class:"btn btn-secondary btn-sm"
-    = link_to t(:delete), destroy_user_registration_path, data: { confirm: t(".message.delete_confirm") }, method: :delete, class:"btn btn-danger btn-sm"         
+    = link_to t(:delete), user_registration_path, data: { confirm: t(".message.delete_confirm") }, method: :delete, class:"btn btn-danger btn-sm"         
