@@ -39,6 +39,16 @@ bundle list
 ## haml
 rails haml:erb2haml
 
+## heroku 
+heroku login
+heroku keys:add
+git push heroku main
+
+heroku config
+heroku config:set BASIC_AUTH_USERNAME=hW6QT5ME
+heroku config:set BASIC_AUTH_PASSWORD=tY8sQ7nh
+
+
 8/12
 10:00-10:15
 
