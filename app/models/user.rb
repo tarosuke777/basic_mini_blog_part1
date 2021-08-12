@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
 
-  validates :username, presence: true , uniqueness: true, length: { maximum: 20 }, format: /\A[a-zA-Z]+\z/
+  validates :username, uniqueness: true, length: { maximum: 20 }, format: /\A[a-zA-Z]+\z/
   validates :profile, length: { maximum: 200 }
   validates :blog_url, allow_blank: true, format: /\A#{URI::regexp(%w(http https))}\z/
 
