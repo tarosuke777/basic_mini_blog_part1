@@ -47,3 +47,7 @@ git push heroku main
 heroku config
 heroku config:set BASIC_AUTH_USERNAME=XXXXXX
 heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
+
+heroku run rails db:migrate:reset
+
+heroku logs -t 
