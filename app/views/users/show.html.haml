@@ -9,7 +9,7 @@
       .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:profile)
       .card-body
-        %p.card-text= @user.profile
+        %p.card-text= simple_format(h(@user.profile))
     .card.mb-2
       .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:blog_url)
