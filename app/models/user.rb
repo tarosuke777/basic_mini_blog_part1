@@ -12,9 +12,9 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
 
-  validates :username, presence: true , uniqueness: true, length: { maximum: 20 }, format: { with: /\A[a-zA-Z]+\z/, message: "英文字で入力してください。"}
+  validates :username, presence: true , uniqueness: true, length: { maximum: 20 }, format: /\A[a-zA-Z]+\z/
   validates :profile, length: { maximum: 200 }
-  validates :blog_url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: "URL形式で入力してください。"}
+  validates :blog_url, allow_blank: true, format: /\A#{URI::regexp(%w(http https))}\z/
 
   def email_required? 
     false 

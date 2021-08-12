@@ -34,6 +34,14 @@ ja:
         current_password: 現在のパスワード
         profile: プロフィール
         blog_url: ブログURL
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: 英文字で入力してください。
+            blog_url:
+              invalid: URL形式で入力してください。
   devise:
     confirmations:
       confirmed: "アカウントを登録しました。"
