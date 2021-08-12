@@ -45,8 +45,8 @@ heroku keys:add
 git push heroku main
 
 heroku config
-heroku config:set BASIC_AUTH_USERNAME=hW6QT5ME
-heroku config:set BASIC_AUTH_PASSWORD=tY8sQ7nh
+heroku config:set BASIC_AUTH_USERNAME=XXXXXX
+heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
 
 
 8/12
