@@ -1,0 +1,4 @@
+= f.button class: "btn btn-primary btn-sm" do
+  %i.bi.bi-heart= " いいね"
+  %span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger
+    = @post.liked_users.count

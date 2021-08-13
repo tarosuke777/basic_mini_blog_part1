@@ -1,0 +1,38 @@
+.row
+  .col-8
+    .card.mb-2
+      .card-header{ style: "background-color: #e3f2fd;" }
+        = t(:created_at)
+      .card-body
+        %p.card-text= l @post.created_at, format: :short
+    .card.mb-2
+      .card-header{ style: "background-color: #e3f2fd;" }
+        = Post.human_attribute_name(:content)
+      .card-body
+        = simple_format(h(@post.content), {}, wrapper_tag: "div")
+    .card.mb-2
+      .card-header{ style: "background-color: #e3f2fd;" }
+        = User.human_attribute_name(:username)
+      .card-body
+        = simple_format(h(@post.user.username), {}, wrapper_tag: "div")
+  .col-4
+    .card.mb-2
+      .card-header{ style: "background-color: #e3f2fd;" }
+        - if user_signed_in? && current_user != @post.user
+          - unless current_user.liked_posts.include?(@post)
+            = form_with(model: current_user.likes.build) do |f|
+              = hidden_field_tag :post_id, @post.id
+              = f.button class: "btn btn-primary btn-sm" do
+                %i.bi.bi-heart= " いいね"
+                %span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger
+                  = @post.liked_users.count
+          - else
+            = form_with(model: current_user.likes.find_by(post_id: @post.id), method: :delete) do |f|
+              = f.button class: "btn btn-primary btn-sm" do
+                %i.bi.bi-heart-fill= " いいね"
+                %span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger
+                  = @post.liked_users.count
+      .card-body
+        %ul.list-group.list-group-flush
+          - @post.liked_users.each do |user|
+            %li.list-group-item= link_to user.username, user_path(id: user.id)

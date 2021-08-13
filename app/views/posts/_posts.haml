@@ -1,9 +1,10 @@
 - @posts.each do |post|
   .row
     .col.text-monospace
-      %span{style: "color:Dodgerblue"}
-        %i.far.fa-comment-dots
-      = l post.created_at, format: :short
+      %i.far.fa-comment-dots{style: "color:Dodgerblue"}
+      = link_to "#{l post.created_at, format: :short}", post_path(id: post.id)
+      %i.bi.bi-heart-half{style: "color:Dodgerblue"}
+      = post.liked_users.count
       - if user_signed_in? && current_user == post.user
         = post.user.username
       - else
