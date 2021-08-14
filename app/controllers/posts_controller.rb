@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:user, :liked_users).find(params[:id])
+    @post = Post.includes(:user, :liked_users, :comments).find(params[:id])
   end
 
   def create

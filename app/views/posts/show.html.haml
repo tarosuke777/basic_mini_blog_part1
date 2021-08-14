@@ -40,3 +40,27 @@
         %ul.list-group.list-group-flush
           - @post.liked_users.each do |user|
             %li.list-group-item= link_to user.username, user_path(id: user.id)
+.row
+  .col-8
+    .card.mb-2
+      .card-header{ style: "background-color: #e3f2fd;" }
+        コメント
+      .card-body
+        = form_with(model: current_user.comments.build, local: false, class: "form-horizontal") do |f|
+          #errors
+          .row
+            .col-4
+              .form-group
+                = f.hidden_field :post_id, value: @post.id
+                = f.text_area :content, class: "form-control"
+            .col-2.px-0.align-self-end
+              .form-group
+                = f.submit t(:regist), class: "btn btn-primary btn-sm"
+          .row
+            .col-8
+              - @post.comments.each do |comment|
+                %table.table.table-sm
+                  %tr
+                    %td{style: "width: 60%"}= simple_format(h(comment.content), {}, wrapper_tag: "div")
+                    %td{style: "width: 20%"}= comment.user.username
+                    %td{style: "width: 20%"}= link_to t(:delete), comment_path(comment), method: :delete

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[show] 
   resources :relationships, only: %i[create destroy]
   resources :likes, only: %i[create destroy]
+  resources :comments, only: %i[create destroy]
 
   root 'posts#index'
   get '/posts/following', to: 'posts#following'

@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :likes, class_name: "Like", foreign_key: "user_id", dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
 
+  has_many :comments, class_name: "Comment", foreign_key: "user_id", dependent: :destroy
+
   validates :username, uniqueness: true, length: { maximum: 20 }, format: /\A[a-zA-Z]+\z/
   validates :profile, length: { maximum: 200 }
   validates :blog_url, allow_blank: true, format: /\A#{URI::regexp(%w(http https))}\z/

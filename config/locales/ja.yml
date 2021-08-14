@@ -28,6 +28,8 @@ ja:
       short: "%Y/%m/%d %H:%M"
   activerecord:
     attributes:
+      comment:
+        content: コメント内容
       post:
         content: 投稿内容
       user:
