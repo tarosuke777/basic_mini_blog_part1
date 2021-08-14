@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  has_many :likes, class_name: "Like", foreign_key: "user_id", dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
 
   validates :username, uniqueness: true, length: { maximum: 20 }, format: /\A[a-zA-Z]+\z/
   validates :profile, length: { maximum: 200 }

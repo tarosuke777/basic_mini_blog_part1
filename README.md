@@ -51,5 +51,3 @@ heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
 heroku run rails db:migrate
 
 heroku logs -t 
-
-rake assets:precompile

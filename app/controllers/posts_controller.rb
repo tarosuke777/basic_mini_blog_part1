@@ -1,12 +1,16 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @posts = Post.includes(:user).all.order(created_at: :desc).limit(20)
+    @posts = Post.includes(:user, :liked_users).all.order(created_at: :desc).limit(20)
   end
 
   def following
-    @posts = Post.includes(:user).where(user_id: current_user.following).order(created_at: :desc).limit(20)
+    @posts = Post.includes(:user, :liked_users).where(user_id: current_user.following).order(created_at: :desc).limit(20)
+  end
+
+  def show
+    @post = Post.includes(:user, :liked_users).find(params[:id])
   end
 
   def create

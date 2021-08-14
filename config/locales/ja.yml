@@ -12,6 +12,9 @@ ja:
   delete: 削除
   back: 戻る
   post: 投稿
+  like: いいね
+  like_user: いいねしたユーザ
+  created_at: 作成日時
   users:
     registrations:
       password_length_message: "%{minimum_password_length}文字以上"

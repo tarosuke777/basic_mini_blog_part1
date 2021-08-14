@@ -3,7 +3,7 @@
     .col.text-monospace
       %i.far.fa-comment-dots{style: "color:Dodgerblue"}
       = link_to "#{l post.created_at, format: :short}", post_path(id: post.id)
-      %i.bi.bi-heart-half{style: "color:Dodgerblue"}
+      %i.bi.bi-heart-fill{style: "color:Dodgerblue"}
       = post.liked_users.count
       - if user_signed_in? && current_user == post.user
         = post.user.username
