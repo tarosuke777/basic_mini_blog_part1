@@ -43,6 +43,8 @@ ja:
       models:
         user:
           attributes:
+            email:
+              invalid: メールアドレス形式で入力してください。
             username:
               invalid: 英文字で入力してください。
             blog_url:

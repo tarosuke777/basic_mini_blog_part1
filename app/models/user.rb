@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, length: { maximum: 20 }, format: /\A[a-zA-Z]+\z/
   validates :profile, length: { maximum: 200 }
   validates :blog_url, allow_blank: true, format: /\A#{URI::regexp(%w(http https))}\z/
+  validates :email, format: URI::MailTo::EMAIL_REGEXP
 
   def email_required? 
     false 
