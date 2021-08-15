@@ -1,6 +1,7 @@
 %p= t("user_mailer.comment_notification.subject", created_at: l(@comment.post.created_at,  format: :short))
 
-= "------------------------------------------------------------"
+%p= "------------------------------------------------------------"
 %p= "#{l @comment.created_at, format: :short} #{@comment.user.username}"
-%p= @comment.content
-= "------------------------------------------------------------"
+%p= simple_format(h(@comment.content))
+%p= "------------------------------------------------------------"
+= link_to nil, post_url(@comment.post), target: "_blank"

@@ -13,6 +13,7 @@ ja:
   back: 戻る
   post: 投稿
   like: いいね
+  comment: コメント
   like_user: いいねしたユーザ
   created_at: 作成日時
   user_mailer:

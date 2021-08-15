@@ -1,6 +1,7 @@
 = t("user_mailer.comment_notification.subject", created_at: l(@comment.post.created_at,  format: :short))
-
+= ""
 = "------------------------------------------------------------"
 = "#{l @comment.created_at, format: :short} #{@comment.user.username}"
+= ""
 = @comment.content
 = "------------------------------------------------------------"

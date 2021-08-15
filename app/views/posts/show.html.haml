@@ -44,23 +44,24 @@
   .col-8
     .card.mb-2
       .card-header{ style: "background-color: #e3f2fd;" }
-        コメント
+        = t(:comment)
       .card-body
-        = form_with(model: current_user.comments.build, local: false, class: "form-horizontal") do |f|
-          #errors
-          .row
-            .col-4
-              .form-group
-                = f.hidden_field :post_id, value: @post.id
-                = f.text_area :content, class: "form-control"
-            .col-2.px-0.align-self-end
-              .form-group
-                = f.submit t(:regist), class: "btn btn-primary btn-sm"
-          .row
-            .col-8
-              - @post.comments.each do |comment|
-                %table.table.table-sm
-                  %tr
-                    %td{style: "width: 60%"}= simple_format(h(comment.content), {}, wrapper_tag: "div")
-                    %td{style: "width: 20%"}= comment.user.username
-                    %td{style: "width: 20%"}= link_to t(:delete), comment_path(comment), method: :delete
+        - if user_signed_in?
+          = form_with(model: current_user.comments.build, local: false, class: "form-horizontal") do |f|
+            #errors
+            .row
+              .col-4
+                .form-group
+                  = f.hidden_field :post_id, value: @post.id
+                  = f.text_area :content, class: "form-control"
+              .col-2.px-0.align-self-end
+                .form-group
+                  = f.submit t(:regist), class: "btn btn-primary btn-sm"
+        .row
+          .col-8
+            - @post.comments.each do |comment|
+              .card
+                .card-body
+                  %h6.card-title= "#{l comment.created_at, format: :short} #{comment.user.username}"
+                  %p.card-text= simple_format(h(comment.content))
+                  = link_to t(:delete), comment_path(comment), method: :delete if user_signed_in? && comment.user == current_user
