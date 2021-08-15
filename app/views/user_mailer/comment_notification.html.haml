@@ -1,0 +1,6 @@
+%p= "#{l @comment.post.created_at, format: :short}の投稿にコメントがつきました"
+
+= "------------------------------------------------------------"
+%p= "#{l @comment.created_at, format: :short} #{@comment.user.username}"
+%p= @comment.content
+= "------------------------------------------------------------"

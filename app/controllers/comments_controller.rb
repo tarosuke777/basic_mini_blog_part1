@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     if @comment.save
+      UserMailer.comment_notification(@comment).deliver_now
       redirect_to post_path(id: @comment.post_id)
     end
   end
