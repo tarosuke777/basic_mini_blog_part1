@@ -7,6 +7,6 @@ class UserMailer < ApplicationMailer
   #
   def comment_notification(comment)
     @comment = comment
-    mail to: comment.post.user.email, subject: "#{l @comment.post.created_at, format: :short}の投稿にコメントがつきました"
+    mail to: comment.post.user.email, subject: default_i18n_subject(created_at: l(@comment.post.created_at,  format: :short))
   end
 end

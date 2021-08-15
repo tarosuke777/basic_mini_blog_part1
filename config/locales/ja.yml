@@ -15,6 +15,10 @@ ja:
   like: いいね
   like_user: いいねしたユーザ
   created_at: 作成日時
+  user_mailer:
+    comment_notification:
+      subject: "%{created_at}の投稿にコメントがつきました"
+      subject2: "の投稿にコメントがつきました"
   users:
     registrations:
       password_length_message: "%{minimum_password_length}文字以上"
