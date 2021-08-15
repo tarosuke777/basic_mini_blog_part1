@@ -34,7 +34,7 @@ ja:
   activerecord:
     attributes:
       comment:
-        content: コメント内容
+        content: コメント
       post:
         content: 投稿内容
       user:
