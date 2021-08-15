@@ -47,7 +47,6 @@ git push heroku main
 heroku config
 heroku config:set BASIC_AUTH_USERNAME=XXXXXX
 heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
-
+heroku config:set SENDGRID_APIKEY=ZZZZZZ
 heroku run rails db:migrate
-
 heroku logs -t 
