@@ -43,10 +43,12 @@ rails haml:erb2haml
 heroku login
 heroku keys:add
 git push heroku main
-
 heroku config
 heroku config:set BASIC_AUTH_USERNAME=XXXXXX
 heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
 heroku config:set SENDGRID_APIKEY=ZZZZZZ
+heroku config:set CLOUDINARY_CLOUD_NAME=ZZZZZZ
+heroku config:set CLOUDINARY_API_KEY=ZZZZZZ
+heroku config:set CLOUDINARY_API_SECRET=ZZZZZZ
 heroku run rails db:migrate
 heroku logs -t 
