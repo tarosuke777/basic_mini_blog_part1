@@ -16,6 +16,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.created_posts.build(post_params)
 
+    p @post
+
     if @post.save
       redirect_to root_path
     end
@@ -24,7 +26,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :image)
   end
 
 end

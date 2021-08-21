@@ -12,6 +12,11 @@
         = simple_format(h(@post.content), {}, wrapper_tag: "div")
     .card.mb-2
       .card-header{ style: "background-color: #e3f2fd;" }
+        = Post.human_attribute_name(:image)
+      .card-body
+        = image_tag(@post.image.url) if @post.image?
+    .card.mb-2
+      .card-header{ style: "background-color: #e3f2fd;" }
         = User.human_attribute_name(:username)
       .card-body
         = simple_format(h(@post.user.username), {}, wrapper_tag: "div")

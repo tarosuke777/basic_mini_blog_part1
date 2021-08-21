@@ -12,3 +12,4 @@
   .row
     .col.ml-5.border-left.border-primary.text-break.text-monospace
       = simple_format(h(post.content), {}, wrapper_tag: "div")
+      = link_to image_tag(post.image.thumb.url, class: "rounded"), post.image.url, target: "_blank" if post.image? 

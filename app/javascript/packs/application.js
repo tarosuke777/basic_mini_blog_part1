@@ -11,7 +11,13 @@ import "bootstrap"
 import "@fortawesome/fontawesome-free/js/all"
 import "../src/application.scss"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import bsCustomFileInput from 'bs-custom-file-input';
+import "jquery"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).on('ready turbolinks:load', function() {
+    bsCustomFileInput.init();
+})

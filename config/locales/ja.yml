@@ -37,6 +37,7 @@ ja:
         content: コメント
       post:
         content: 投稿内容
+        image: 投稿画像
       user:
         username: ユーザ名
         password: パスワード

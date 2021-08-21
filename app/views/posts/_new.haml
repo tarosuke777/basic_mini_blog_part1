@@ -1,9 +1,12 @@
 = form_with(model: current_user.created_posts.build, local: false, class: "form-horizontal") do |f|
   #errors
   .row
-    .col-4
-      .form-group
+    .col-5
+      .form-group.mb-2
         = f.text_area :content, class: "form-control"
-    .col-2.px-0.align-self-end
-      .form-group
+      .form-group.mb-0
+        .custom-file
+          = f.file_field :image, class: "custom-file-input", id: "inputFile"
+          %label.custom-file-label{"style": "font-size:10px", "for": "inputFile", "data-browse": "参照"}ファイル選択
+      .form-group.text-right
         = f.submit t(:post), class: "btn btn-primary btn-sm"
