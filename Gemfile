@@ -68,4 +68,3 @@ gem 'erb2haml'
 gem 'devise'
 
 gem 'carrierwave', '~> 2.0'
-
