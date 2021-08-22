@@ -83,3 +83,4 @@ ja:
       confirmation: "があっていません。"
       extension_whitelist_error: "画像をアップロードしてください。"
       mini_magick_processing_error: "画像をアップロードしてください。"
+      cloudinary_upload_error: "予期しないエラーが発生しました。再投稿してください。"

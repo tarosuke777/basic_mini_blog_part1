@@ -16,10 +16,13 @@ class PostsController < ApplicationController
   def create
     @post = current_user.created_posts.build(post_params)
 
-    p @post
-
-    if @post.save
-      redirect_to root_path
+    begin
+      if @post.save
+        redirect_to root_path
+      end
+    rescue Cloudinary::CarrierWave::UploadError 
+      @post.destroy
+      @post.errors.add(:image, t('errors.messages.cloudinary_upload_error'))
     end
   end
 

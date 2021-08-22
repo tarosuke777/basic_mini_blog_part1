@@ -55,7 +55,6 @@ group :test do
 end
 
 group :production do
-  gem 'cloudinary'
   gem 'pg' 
 end
 
@@ -68,3 +67,4 @@ gem 'erb2haml'
 gem 'devise'
 
 gem 'carrierwave', '~> 2.0'
+gem 'cloudinary'
