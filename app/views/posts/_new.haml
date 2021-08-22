@@ -7,6 +7,6 @@
       .form-group.mb-0
         .custom-file
           = f.file_field :image, class: "custom-file-input", id: "inputFile"
-          %label.custom-file-label{"style": "font-size:10px", "for": "inputFile", "data-browse": "参照"}ファイル選択
+          %label.custom-file-label{"style": "font-size:10px", "for": "inputFile", "data-browse": "#{t(:ref)}"}= t(:image_choice)
       .form-group.text-right
         = f.submit t(:post), class: "btn btn-primary btn-sm"

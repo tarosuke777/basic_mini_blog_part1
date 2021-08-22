@@ -11,6 +11,8 @@ ja:
   update: 更新
   delete: 削除
   back: 戻る
+  ref: 参照
+  image_choice: 画像選択
   post: 投稿
   like: いいね
   comment: コメント
@@ -79,3 +81,5 @@ ja:
       too_short: "は%{count}文字以上を入力してください。"
       too_long: "は%{count}文字以下を入力してください。"
       confirmation: "があっていません。"
+      extension_whitelist_error: "画像をアップロードしてください。"
+      mini_magick_processing_error: "画像をアップロードしてください。"
