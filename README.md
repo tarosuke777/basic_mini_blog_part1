@@ -55,3 +55,5 @@ heroku config:set CLOUDINARY_API_KEY=ZZZZZZ
 heroku config:set CLOUDINARY_API_SECRET=ZZZZZZ
 heroku run rails db:migrate
 heroku logs -t 
+
+heroku run rails ranking:like_top10
