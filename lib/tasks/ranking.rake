@@ -11,7 +11,7 @@ namespace :ranking do
                      .select('posts.id, posts.created_at, posts.content, users.username, count(likes.id) AS likes_count')
                      .where(created_at: from..to)
                      .group('posts.id, posts.created_at, posts.content, users.username')
-                     .having("likes_count >= ?", 1)
+                     .having("count(likes.id) >= ?", 1)
                      .order("likes_count desc, posts.created_at asc")
     
         if posts.present?
