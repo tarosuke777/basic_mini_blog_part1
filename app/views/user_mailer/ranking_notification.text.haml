@@ -1,0 +1,17 @@
+=t("user_mailer.ranking_notification.subject")
+= "------------------------------------------------------------"
+- rank = 0
+- rank_likes_count = 0
+- @posts.each do |post|
+  - if post.likes_count != rank_likes_count
+    - rank_likes_count =  post.likes_count
+    - rank += 1
+    = t("user_mailer.ranking_notification.rank", rank: rank)
+  = "#{l post.created_at, format: :short} by #{post.username} (#{t("user_mailer.ranking_notification.like", likes_count: post.likes_count)})"
+  = post.content 
+  = post_url(id: post.id)
+  = ""
+  - if rank > 5 then
+    - break
+= "------------------------------------------------------------"
+= "#{t("user_mailer.ranking_notification.measurement_period")}(#{l @from, format: :short} ～  #{l @to, format: :short})"

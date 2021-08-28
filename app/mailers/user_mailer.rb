@@ -9,4 +9,11 @@ class UserMailer < ApplicationMailer
     @comment = comment
     mail to: comment.post.user.email, subject: default_i18n_subject(created_at: l(@comment.post.created_at,  format: :short))
   end
+
+  def ranking_notification(user, posts, from, to)
+    @posts = posts
+    @from = from
+    @to = to
+    mail to: user.email, subject: t("user_mailer.ranking_notification.subject")
+  end
 end

@@ -1,0 +1,17 @@
+%h3{ style: "background-color: #e3f2fd;" }=t("user_mailer.ranking_notification.subject")
+%hr
+- rank = 0
+- rank_likes_count = 0
+- @posts.each do |post|
+  - if post.likes_count != rank_likes_count
+    - rank_likes_count =  post.likes_count
+    - rank += 1
+    %h4{ style: "background-color: #e3f2fd;" }= t("user_mailer.ranking_notification.rank", rank: rank)
+  %p{style: "font-size:smaller"}
+    = link_to "#{l post.created_at, format: :short}", post_url(id: post.id), target: "_blank"
+    = " by #{post.username} (#{t("user_mailer.ranking_notification.like", likes_count: post.likes_count)})"
+  = simple_format(h(post.content), { style: "font-size:smaller" }, {wrapper_tag: "div"})
+  - if rank > 5 then
+    - break
+%hr
+%p{style: "font-size:1px"}= "#{t("user_mailer.ranking_notification.measurement_period")}(#{l @from, format: :short} ～  #{l @to, format: :short})"

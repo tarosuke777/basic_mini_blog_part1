@@ -21,7 +21,11 @@ ja:
   user_mailer:
     comment_notification:
       subject: "%{created_at}の投稿にコメントがつきました"
-      subject2: "の投稿にコメントがつきました"
+    ranking_notification:
+      subject: "前日いいねが多かった投稿ベスト１０"
+      rank: "第%{rank}位"
+      measurement_period: "計測期間"
+      like: "%{likes_count}いいね"
   users:
     registrations:
       password_length_message: "%{minimum_password_length}文字以上"
@@ -33,6 +37,7 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%Y/%m/%d %H:%M"
+      day: "%Y/%m/%d"
   activerecord:
     attributes:
       comment:
