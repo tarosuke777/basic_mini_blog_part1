@@ -4,6 +4,7 @@ namespace :ranking do
 
         from = Time.current.beginning_of_day - 1.day
         to = Time.current.end_of_day - 1.day
+        limit = 10
    
         posts = Post.joins(:user)
                       .left_outer_joins(:likes)
@@ -16,7 +17,7 @@ namespace :ranking do
         if posts.present?
             users = User.where.not(email: nil)
             users.each do |user|
-                UserMailer.ranking_notification(user, posts, from, to).deliver
+                UserMailer.ranking_notification(user, posts, from, to, limit).deliver
             end
         end
       end

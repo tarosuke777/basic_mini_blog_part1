@@ -12,6 +12,7 @@ class UserMailerPreview < ActionMailer::Preview
 
     from = Time.current.beginning_of_day - 10.day
     to = Time.current.end_of_day - 0.day
+    limit = 10
 
     posts = Post
                 .joins(:user)
@@ -22,6 +23,6 @@ class UserMailerPreview < ActionMailer::Preview
                 .having("likes_count >= ?", 1)
                 .order("likes_count desc, posts.created_at asc")
 
-    UserMailer.ranking_notification(User.find(1), posts, from, to)
+    UserMailer.ranking_notification(User.find(1), posts, from, to, limit)
   end  
 end
