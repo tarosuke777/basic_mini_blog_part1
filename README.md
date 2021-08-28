@@ -39,6 +39,9 @@ bundle list
 ## haml
 rails haml:erb2haml
 
+## rake
+rails ranking:like_top10
+
 ## heroku 
 heroku login
 heroku keys:add
