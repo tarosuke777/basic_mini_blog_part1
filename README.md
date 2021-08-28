@@ -57,3 +57,4 @@ heroku run rails db:migrate
 heroku logs -t 
 
 heroku run rails ranking:like_top10
+rake ranking:like_top10
