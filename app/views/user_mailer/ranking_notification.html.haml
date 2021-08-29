@@ -11,7 +11,7 @@
     = link_to "#{l post.created_at, format: :short}", post_url(id: post.id), target: "_blank"
     = " by #{post.username} (#{t("user_mailer.ranking_notification.like", likes_count: post.likes_count)})"
   = simple_format(h(post.content), { style: "font-size:smaller" }, {wrapper_tag: "div"})
-  - if rank > @limit then
+  - if rank >= @limit then
     - break
 %hr
 %p{style: "font-size:1px"}= "#{t("user_mailer.ranking_notification.measurement_period")}(#{l @from, format: :short} ～  #{l @to, format: :short})"

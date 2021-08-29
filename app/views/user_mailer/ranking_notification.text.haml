@@ -11,7 +11,7 @@
   = post.content 
   = post_url(id: post.id)
   = ""
-  - if rank > @limit then
+  - if rank >= @limit then
     - break
 = "------------------------------------------------------------"
 = "#{t("user_mailer.ranking_notification.measurement_period")}(#{l @from, format: :short} ～  #{l @to, format: :short})"
