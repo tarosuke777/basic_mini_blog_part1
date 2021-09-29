@@ -1,10 +1,10 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-group
+  .mb-3
     = f.label :username
     = f.text_field :username, class: "form-control"
-  .form-group
+  .mb-3
     = f.label :password
     = f.password_field :password,  class: "form-control"
-  .form-group
+  .mb-3
     = f.submit t(:sign_in), class: "btn btn-primary btn-sm"
 = render "users/shared/links"

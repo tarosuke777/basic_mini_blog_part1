@@ -31,14 +31,14 @@
               - unless current_user.liked_posts.include?(@post)
                 = form_with(model: current_user.likes.build) do |f|
                   = hidden_field_tag :post_id, @post.id
-                  = f.button class: "btn btn-primary btn-sm" do
-                    %i.bi.bi-heart-fill= " #{t(:like)}"
+                  = f.button class: "btn btn-primary btn-sm position-relative" do
+                    %i.fas.fa-heart= " #{t(:like)}"
                     %span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-info
                       = @post.liked_users.count
               - else
                 = form_with(model: current_user.likes.find_by(post_id: @post.id), method: :delete) do |f|
-                  = f.button class: "btn btn-secondary btn-sm" do
-                    %i.bi.bi-heart-fill= " #{t(:like)}"
+                  = f.button class: "btn btn-secondary btn-sm position-relative" do
+                    %i.fas.fa-heart= " #{t(:like)}"
                     %span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-info
                       = @post.liked_users.count
       .card-body
@@ -56,11 +56,11 @@
             #errors
             .row
               .col-4
-                .form-group
+                .mb-3
                   = f.hidden_field :post_id, value: @post.id
                   = f.text_area :content, class: "form-control"
               .col-2.px-0.align-self-end
-                .form-group
+                .mb-3
                   = f.submit t(:regist), class: "btn btn-primary btn-sm"
         .row
           .col-8

@@ -1,15 +1,15 @@
 - @posts.each do |post|
   .row
-    .col.text-monospace
+    .col.font-monospace
       %i.far.fa-comment-dots{style: "color:Dodgerblue"}
       = link_to "#{l post.created_at, format: :short}", post_path(id: post.id)
-      %i.bi.bi-heart-fill{style: "color:Dodgerblue"}
+      %i.fas.fa-heart{style: "color:Dodgerblue"}
       = post.liked_users.size
       - if user_signed_in? && current_user == post.user
         = post.user.username
       - else
         = link_to post.user.username, user_path(id: post.user.id)
   .row
-    .col.ml-5.border-left.border-primary.text-break.text-monospace
+    .col.ms-5.border-start.border-primary.text-break.font-monospace
       = simple_format(h(post.content), {}, wrapper_tag: "div")
       = link_to image_tag(post.image.thumb.url, class: "rounded"), post.image.url, target: "_blank" if post.image? 

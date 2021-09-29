@@ -1,8 +1,8 @@
 = form_with(model: @post, class: "form-horizontal") do |f|
   #errors
-  .form-group
+  .mb-3
     = f.label :content
     = f.text_area :content, maxlength: "140", class: "form-control"
-  .form-group
+  .mb-3
     = f.submit t(:regist), class: "btn btn-primary btn-sm"
     = link_to t(:back), root_path, class:"btn btn-secondary btn-sm"

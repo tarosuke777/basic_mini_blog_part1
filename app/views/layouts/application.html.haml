@@ -8,10 +8,9 @@
     = csp_meta_tag
     
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header.navbar.navbar-expand-sm.navbar-light{ style: "background-color: #e3f2fd;" }
+    .navbar.navbar-expand-lg.navbar-light.bg-light
       .container
         = link_to t(:title), root_path, class: "navbar-brand"
         %ui.navbar-nav

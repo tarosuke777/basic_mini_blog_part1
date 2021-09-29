@@ -1,31 +1,31 @@
 = form_for(resource, as: resource_name, url: users_edit_path, html: { method: :put }) do |f|
   = render "users/shared/error_messages", resource: resource
-  .form-group
+  .mb-3
     = f.label :username
     = f.text_field :username, class: "form-control"
-  .form-group
+  .mb-3
     = f.label :password
     = f.password_field :password, class: "form-control"
     .form-text.small
       = t(".message.password")
       - if @minimum_password_length
         = "(#{t("users.registrations.password_length_message", minimum_password_length: @minimum_password_length)})"
-  .form-group
+  .mb-3
     = f.label :password_confirmation
     = f.password_field :password_confirmation, class: "form-control"
-  .form-group
+  .mb-3
     = f.label :email
     = f.text_field :email, class: "form-control"
-  .form-group
+  .mb-3
     = f.label :profile
     = f.text_area :profile, class: "form-control", row: 10
-  .form-group
+  .mb-3
     = f.label :blog_url
     = f.text_field :blog_url, class: "form-control"
-  .form-group
+  .mb-3
     = f.label :current_password
     = f.password_field :current_password, class: "form-control"
-  .form-group
+  .mb-3
     = f.submit t(:update), class: "btn btn-primary btn-sm"
     = link_to t(:back), root_path, class:"btn btn-secondary btn-sm"
     = link_to t(:delete), user_registration_path, data: { confirm: t(".message.delete_confirm") }, method: :delete, class:"btn btn-danger btn-sm"         
