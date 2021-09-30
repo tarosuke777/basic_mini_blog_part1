@@ -18,6 +18,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(document).on('ready turbolinks:load', function() {
-    bsCustomFileInput.init();
-})
+// $(document).on('ready turbolinks:load', function() {
+//     bsCustomFileInput.init();
+// })
