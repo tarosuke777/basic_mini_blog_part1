@@ -32,7 +32,8 @@
                 = form_with(model: current_user.likes.build) do |f|
                   = hidden_field_tag :post_id, @post.id
                   = f.button class: "btn btn-primary btn-sm position-relative" do
-                    %i.fas.fa-heart= " #{t(:like)}"
+                    %i.fas.fa-heart
+                    = " #{t(:like)}"
                     %span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-info
                       = @post.liked_users.count
               - else
