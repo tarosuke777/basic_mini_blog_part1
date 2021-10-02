@@ -7,17 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-//import "bootstrap"
-//import "@fortawesome/fontawesome-free/js/all"
-//import "../src/application.scss"
-//import 'bootstrap-icons/font/bootstrap-icons.css'
-//import bsCustomFileInput from 'bs-custom-file-input';
-//import "jquery"
+import "bootstrap"
+import "bootstrap/scss/bootstrap.scss"
+import "@fortawesome/fontawesome-free/js/all"
+import "@fortawesome/fontawesome-free/scss/fontawesome.scss"
+import "@fortawesome/fontawesome-free/scss/brands.scss"
+import "@fortawesome/fontawesome-free/scss/regular.scss"
+import "@fortawesome/fontawesome-free/scss/solid.scss"
+import "@fortawesome/fontawesome-free/scss/v4-shims.scss"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-// $(document).on('ready turbolinks:load', function() {
-//     bsCustomFileInput.init();
-// })
