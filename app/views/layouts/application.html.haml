@@ -6,11 +6,11 @@
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
-    
-    = stylesheet_pack_tag 'application'    
+
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .navbar.navbar-expand-lg.navbar-light.bg-light
+    .navbar.navbar-expand-lg.navbar-dark.bg-primary
       .container
         = link_to t(:title), root_path, class: "navbar-brand"
         %ui.navbar-nav
