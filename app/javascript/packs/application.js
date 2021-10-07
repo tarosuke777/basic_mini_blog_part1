@@ -9,7 +9,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
 import "@fortawesome/fontawesome-free/js/all"
-// import "@fortawesome/fontawesome-free/js/fontawesome"
 
 Rails.start()
 Turbolinks.start()
