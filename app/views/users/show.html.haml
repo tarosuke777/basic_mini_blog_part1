@@ -1,17 +1,17 @@
 .row
   .col-8
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = User.human_attribute_name(:username)
       .card-body
         %p.card-text= @user.username
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = User.human_attribute_name(:profile)
       .card-body
         = simple_format(h(@user.profile), {}, wrapper_tag: "div")
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = User.human_attribute_name(:blog_url)
       .card-body
         = link_to nil, @user.blog_url, target: "_blank"

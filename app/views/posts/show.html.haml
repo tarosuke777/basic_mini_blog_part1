@@ -5,24 +5,24 @@
         = t(:created_at)
       .card-body
         %p.card-text= l @post.created_at, format: :short
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = Post.human_attribute_name(:content)
       .card-body
         = simple_format(h(@post.content), {}, wrapper_tag: "div")
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = Post.human_attribute_name(:image)
       .card-body
         = image_tag(@post.image.url) if @post.image?
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = User.human_attribute_name(:username)
       .card-body
         = simple_format(h(@post.user.username), {}, wrapper_tag: "div")
   .col-4
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         .row
           .col-6{ style: "top: 3px;" }
             = t(:like_user)
@@ -49,8 +49,8 @@
             %li.list-group-item= link_to user.username, user_path(id: user.id)
 .row
   .col-8
-    .card.mb-2
-      .card-header{ style: "background-color: #e3f2fd;" }
+    .card.border-primary.mb-2
+      %h6.card-header
         = t(:comment)
       .card-body
         - if user_signed_in?
