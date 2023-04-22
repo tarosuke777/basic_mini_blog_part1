@@ -44,6 +44,8 @@ rails ranking:like_top10
 
 ## Docker
 docker-compose up -d
+docker-compose down
+docker-compose ps
 
 ## heroku 
 #heroku login
