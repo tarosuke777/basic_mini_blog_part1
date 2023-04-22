@@ -42,19 +42,22 @@ rails haml:erb2haml
 ## rake
 rails ranking:like_top10
 
-## heroku 
-heroku login
-heroku keys:add
-git push heroku main
-heroku config
-heroku config:set BASIC_AUTH_USERNAME=XXXXXX
-heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
-heroku config:set SENDGRID_APIKEY=ZZZZZZ
-heroku config:set CLOUDINARY_CLOUD_NAME=ZZZZZZ
-heroku config:set CLOUDINARY_API_KEY=ZZZZZZ
-heroku config:set CLOUDINARY_API_SECRET=ZZZZZZ
-heroku run rails db:migrate
-heroku logs -t 
+## Docker
+docker-compose up -d
 
-heroku run rails ranking:like_top10
-rake ranking:like_top10
+## heroku 
+#heroku login
+#heroku keys:add
+#git push heroku main
+#heroku config
+#heroku config:set BASIC_AUTH_USERNAME=XXXXXX
+#heroku config:set BASIC_AUTH_PASSWORD=YYYYYY
+#heroku config:set SENDGRID_APIKEY=ZZZZZZ
+#heroku config:set CLOUDINARY_CLOUD_NAME=ZZZZZZ
+#heroku config:set CLOUDINARY_API_KEY=ZZZZZZ
+#heroku config:set CLOUDINARY_API_SECRET=ZZZZZZ
+#heroku run rails db:migrate
+#heroku logs -t 
+
+#heroku run rails ranking:like_top10
+#rake ranking:like_top10
