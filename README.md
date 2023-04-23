@@ -47,6 +47,10 @@ docker-compose up -d
 docker-compose down
 docker-compose ps
 
+## INIT
+docker-compose run --rm web rails db:migrate:reset RAILS_ENV=development
+docker-compose up -d
+
 ## heroku 
 #heroku login
 #heroku keys:add
