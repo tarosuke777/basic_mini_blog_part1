@@ -51,6 +51,11 @@ docker-compose ps
 docker-compose run --rm web rails db:migrate:reset RAILS_ENV=development
 docker-compose up -d
 
+## ssl
+apt install mkcert
+mkcert -install
+mkcert localhost 127.0.0.1
+
 ## heroku 
 #heroku login
 #heroku keys:add
