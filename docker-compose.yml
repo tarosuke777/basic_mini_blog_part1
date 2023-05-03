@@ -5,6 +5,7 @@ services:
         command: bundle exec rails s
         volumes:
             - .:/myapp
+            - node_modules:/myapp/node_modules
             - public-data:/myapp/public
             - tmp-data:/myapp/tmp
         depends_on:
@@ -31,5 +32,6 @@ services:
         - ap
 volumes:
     db-volume:
+    node_modules:
     public-data:
     tmp-data:
