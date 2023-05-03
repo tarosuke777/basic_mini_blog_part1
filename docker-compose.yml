@@ -27,7 +27,7 @@ services:
         - public-data:/myapp/public
         - tmp-data:/myapp/tmp
       ports:
-        - 80:80
+        - 443:443
       depends_on:
         - ap
 volumes:
